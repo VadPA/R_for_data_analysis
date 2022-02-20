@@ -128,10 +128,199 @@ paste0(format(ISOdate(2022,2,1:28),"%b"), set=".", seq(1,28))
 paste0(seq(1,28), set=".", format(ISOdate(2022,2,1:28),"%b"))
 paste0(seq(1,28), set=".", format(ISOdate(2022,2,1:28),"%b.%a"))
 paste0(seq(1,28), set=".", format(ISOdate(2022,2,1:28),"%b-%a"))
+paste0(seq(1,28), set=".", format(ISOdate(2022,2,1:28),"%b.%a"))
 paste0(seq(1,28), set=".", format(ISOdate(2022,2,1:28),"%b.%a"))[4:10]
 paste0(seq(1,28), set=".", format(ISOdate(2022,2,1:28),"%b.%a"))[15:2]
 let.4<-format(ISOdate(2022,2,1:28),"%b-%a")
 let.4
 class(let.4)
 
-.libPaths()
+2!=0
+class(2!=0)
+
+class(factorial)
+class(factorial(4))
+
+p<-c(rep("a",5),rep("b",3),rep("g",4))
+p
+
+sample(p)
+sample(p)
+
+set.seed(2)
+sample(p)
+
+set.seed(2)
+sample(p)
+
+p.table<-table(p)
+p.table
+class(p)
+class(p.table)
+
+r<-seq(12,2)
+r
+sum.r<-sum(r)
+sum.r
+
+length(r)
+mean.1<-sum(r)/length(r)
+mean.1
+
+mean.2<-mean(r)
+mean.2
+
+set.seed(1)
+popul<-rnorm(100)
+popul
+
+popul.1<-round(popul,3)
+popul.1
+
+sort(popul.1)
+
+sort(popul.1, decreasing = TRUE)
+
+set.seed(2)
+lets<-sample(letters, 100, replace = TRUE)
+lets
+
+df<-data.frame(lets, popul.1)
+head(df)
+
+ind<-order(df$popul.1)
+ind
+
+df.1<-data.frame(popul.1, lets)
+head(df.1)
+
+ind.1<-order(df.1$lets)
+ind.1
+
+df.2<-df[ind.1,]
+head(df.2)
+
+pt.1<-table(df.2)
+pt.1
+
+unique(lets)
+length(unique(lets))
+
+h<-seq(31,45)
+h
+length(h)
+h[1]
+h[length(h)]
+h[c(1,5,15)]
+h[c(1,5,16)]
+h[-c(1,5,15)]
+h[-c(1,5,16)]
+
+h[1:6]
+h[7:1]
+h[7:0]
+
+g<-1:15
+g
+h
+h + g
+h*2
+g**2
+
+?data()
+data()
+
+data(package = .packages(all.available = TRUE))
+library(cluster)
+animals
+?animals
+
+is.na(animals)
+sum(is.na(animals))
+
+head(animals)
+animals$gro
+t.1<-table(animals$fly)
+t.1
+
+t.2<-table(animals$fly,animals$end)
+t.2
+
+t.3<-table(animals$fly,animals$end,animals$gro)
+t.3
+
+t.4<-table(animals$end,animals$gro)
+t.4
+
+animals$gro[!is.na(animals$gro)]
+length(animals$gro[!is.na(animals$gro)])
+
+animals$gro[!is.na(animals[,5])]
+
+?iris
+head(iris)
+tail(iris)
+
+dim(iris)
+
+str(iris)
+
+unique(iris$Species)
+
+
+df_train<-iris[1:5, c(2,4,5)]
+df_train
+df_train[df_train$Sepal.Width > 3.1,]
+df_train[df_train$Sepal.Width > 3.1 & df_train$Petal.Width > 0.2,]
+
+df_train[df_train$Sepal.Width > 3.1 & df_train$Petal.Width >= 0.2,]
+df_train[df_train$Sepal.Width > 3.1 & df_train$Petal.Width >= 0.2, 3]
+
+round(length(iris[,1])*0.25,0)
+
+?sample
+
+weight<-c(78, 56, 67, 48, 69, 90)
+height<-c(170, 160, 167, 152, 168, 184)
+sex<-c(rep("F",3),rep("M",3))
+sex
+class(sex)
+
+df.4<-data.frame(weight, height, sex, stringsAsFactors = F)
+df.4
+str(df.4)
+
+df.5<-data.frame(weight, height, sex, stringsAsFactors = T)
+df.5
+str(df.5)
+
+# ____________
+
+m<-1:30
+z<-c(10,3)
+dim(m)
+dim(z)
+dim(m)<-z
+dim(m)
+m
+
+dim(m)<-c(2,15)
+m
+
+y<-1:50
+y
+mt<-matrix(y, 10, 5)
+mt
+
+name.1<- LETTERS[1:10]
+name.1
+
+?rownames
+rownames(mt, do.NULL = T, prefix = "row")
+rownames(mt)<-name.1
+mt
+
+colnames(mt, do.NULL = T, prefix = "col")
+colnames(mt)<-paste("day", 1:5)
+mt
+dim(mt)
